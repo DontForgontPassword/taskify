@@ -1,4 +1,7 @@
 .todoItem {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     width: 100%;
     padding: 15px 20px;
 
@@ -6,6 +9,37 @@
     border-radius: 5px;
 }
 
-.todoTask {
+.taskText {
     font-family: "Nunito";
+}
+
+.action {
+    display: flex;
+    gap: 4px;
+}
+
+.editButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 30px;
+    height: 30px;
+
+    background-color: var(--primary-color);
+    border-radius: var(--button-border-radius);
+    border: 1px solid var(--dark-color);
+}
+
+.removeButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 30px;
+    height: 30px;
+
+    background-color: var(--red-color);
+    border-radius: var(--button-border-radius);
+    border: 1px solid var(--dark-color);
 }
