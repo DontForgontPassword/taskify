@@ -1,0 +1,70 @@
+@use 'sass:math';
+
+.header {
+    margin-top: 10px;
+}
+
+.inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.title {
+    font-family: "Poppins";
+}
+
+.carousel {
+    position: relative;
+    overflow: hidden;
+
+    &::before,
+    &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        width: 40px;
+        height: 40px;
+        z-index: 1;
+    }
+
+    &::before {
+        left: 0;
+        background: linear-gradient(to right, white, transparent);
+    }
+
+    &::after {
+        right: 0;
+        background: linear-gradient(to left, white, transparent);
+    }
+}
+
+.list {
+    position: relative;
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    padding: 10px;
+    flex-wrap: nowrap;
+    width: 700px;
+}
+
+.listItem {
+    position: relative;
+    font-family: "Nunito";
+    white-space: nowrap;
+    padding-right: 12px;
+
+    &::after {
+        content: "";
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        height: 14px;
+        width: 1px;
+        background: --primary-color;
+    }
+}

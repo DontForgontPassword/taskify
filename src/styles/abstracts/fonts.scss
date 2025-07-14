@@ -1,0 +1,17 @@
+$poppins: 300, 400, 500;
+
+@each $weight in $poppins {
+    @font-face {
+        font-family: "Poppins";
+        src: url("@/assets/fonts/Poppins-Regular.woff2") format("woff2");
+        font-weight: $weight;
+        font-display: swap;
+    }
+}
+
+@font-face {
+    font-family: "Nunito";
+    src: url("@/assets/fonts/Nunito-Regular.woff2") format("woff2");
+    font-weight: 400;
+    font-display: swap;
+}

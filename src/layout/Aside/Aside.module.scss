@@ -1,0 +1,21 @@
+.aside {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 450px;
+    padding: var(--block-padding);
+    border-radius: var(--block-border-radius);
+    box-shadow: var(--block-shadow);
+}
+
+.title {
+    font-family: "Nunito";
+}
+
+.todoList {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-top: 20px;
+    list-style-type: none;
+}
