@@ -17,13 +17,18 @@ const TodoItem = ({ task, id }: TodoObject) => {
             <input
                 className={styles.taskText}
                 value={task}
+                onChange={(e) => {
+                    if (isEditing) {
+                        editTodo(id, e.target.value)
+                    }
+                }}
                 disabled={!isEditing}
             />
             <div className={styles.action}>
                 <button
                     className={styles.editButton}
                     aria-label="Edit task"
-                    onClick={() => setIsEditing(true)}
+                    onClick={() => setIsEditing(!isEditing)}
                 >
                     {isEditing ? <MdSave color="white" /> : <MdEdit color="white" />}
                 </button>
