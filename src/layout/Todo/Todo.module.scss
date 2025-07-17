@@ -1,6 +1,5 @@
 .todo {
     display: flex;
-    justify-content: center;
     flex-direction: column;
     width: 600px;
     height: 200px;
@@ -16,7 +15,6 @@
 .wrapper {
     display: flex;
     gap: 10px;
-    width: 100%;
     margin-top: 30px;
 }
 
@@ -37,6 +35,7 @@
         outline: none;
     }
 
+    &.active+.inputLabel,
     &:focus+.inputLabel {
         padding: 5px;
         left: 5px;
@@ -56,6 +55,8 @@
     z-index: 1;
     padding: 0 20px;
     pointer-events: none;
+    transition: top var(--transition),
+        left var(--transition);
 }
 
 .button {

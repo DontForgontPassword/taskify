@@ -4,11 +4,12 @@ import Main from "@layout/Main/Main"
 import Aside from "@layout/Aside/Aside"
 
 function App() {
+
   return (
     <>
       <Header />
       <Main>
-        <Todo />
+        <Todo  />
         <Aside />
       </Main>
     </>

@@ -9,7 +9,15 @@ export default defineConfig({
   resolve: {
     alias: {
       "@": "/src/",
-      "@layout": "/src/layout"
+      "@layout": "/src/layout",
+      "@components": "/src/components"
+    }
+  },
+  css: {
+    preprocessorOptions: {
+      scss: {
+        additionalData: `@use "@/styles/index.scss" as *;`
+      }
     }
   }
 })

@@ -2,17 +2,10 @@ import { useEffect, useRef } from "react"
 import styles from "./Header.module.scss"
 
 import Container from "@layout/Container/Container"
+import { words } from "./words";
 
-const words = [
-    "Успей все",
-    "Разделяй задачи на мелкие шаги",
-    "Ставь приоритеты",
-    "Добавляй дедлайны и напоминания",
-    "Ежедневный пересмотр"
-]
 
 const Header = () => {
-
     const listRef = useRef<HTMLUListElement>(null);
 
     useEffect(() => {
@@ -28,14 +21,13 @@ const Header = () => {
                 offset = 0;
             }
 
-            list.style.transform = `translateX(-${offset}px)`; // положительное значение offset двигает список вправо, содержимое — влево
+            list.style.transform = `translateX(-${offset}px)`; // движется влево
 
             requestAnimationFrame(step);
         };
 
         step();
     }, []);
-
 
 
     return <header className={styles.header}>

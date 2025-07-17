@@ -1,38 +1,31 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
+
 import styles from "./Todo.module.scss"
-import { words } from "./words";
+import { useTodoStore } from "@/hooks/useTodoStore";
 
 const Todo = () => {
-    const [word, setWord] = useState(words[0]);
+    const [content, setContent] = useState("");
+    const addTodo = useTodoStore((state) => state.addTodo);
 
-    let previousIndex = 0;
-
-    useEffect(() => {
-        let nextIndex
-        const interval = setInterval(() => {
-            do {
-                nextIndex = Math.floor(Math.random() * words.length);
-            } while (previousIndex === nextIndex);
-
-            previousIndex = nextIndex;
-
-            setWord(words[nextIndex]);
-        }, 7000)
-
-        return () => clearInterval(interval);
-    }, [])
+    const handleAddTodos = (content: string) => {
+        addTodo(content);
+    }
 
     return (
         <div className={styles.todo}>
-            <h2 className={styles.title}>Список задач</h2>
+            <h2 className={styles.title}>Добавить задачу</h2>
             <div className={styles.wrapper}>
                 <div className={styles.inputWrapper}>
-                    <input id="task" type="text" className={styles.input} />
-                    <label className={styles.inputLabel} htmlFor="task">{
-                        word
-                    }</label>
+                    <input id="task" type="text" className={`${styles.input} ${content ? styles.active : ""}`} onChange={(e) => {
+                        setContent(e.target.value)
+                    }} />
+                    <label className={styles.inputLabel} htmlFor="task">
+                        Какова Ваша задача?
+                    </label>
                 </div>
-                <button className={styles.button}>Добавить задачу</button>
+                <button className={styles.button} onClick={() => {
+                    handleAddTodos(content)
+                }}>Добавить задачу</button>
             </div>
         </div>
     );

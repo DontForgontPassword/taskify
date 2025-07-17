@@ -1,4 +1,4 @@
-import type { FC } from "react";
+import { type FC } from "react";
 import Container from "@layout/Container/Container";
 import styles from "./Main.module.scss"
 

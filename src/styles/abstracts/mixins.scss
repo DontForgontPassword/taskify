@@ -1,0 +1,13 @@
+@mixin proportion($size) {
+    width: $size;
+    height: $size;
+}
+
+@mixin reset-input {
+    border: none;
+    background-color: transparent;
+    color: black;
+    &::placeholder{ 
+        color: black;
+    }
+}
