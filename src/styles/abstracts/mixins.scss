@@ -4,10 +4,15 @@
 }
 
 @mixin reset-input {
-    border: none;
     background-color: transparent;
-    color: black;
+    color: inherit;
     &::placeholder{ 
-        color: black;
+        color: inherit;
     }
+}
+
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

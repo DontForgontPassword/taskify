@@ -6,7 +6,7 @@ interface TodoState {
     todos: TodoObject[],
     addTodo: (task: string) => void,
     removeTodo: (id: number) => void,
-    editTodo: (id: number, newTask: string) => void,
+    editTodo: (newTodo: TodoObject) => void,
 }
 
 export const useTodoStore = create<TodoState>()(
@@ -16,6 +16,7 @@ export const useTodoStore = create<TodoState>()(
             addTodo: (task: string) => {
                 const newTodo = {
                     task,
+                    completed: false,
                     id: Date.now(),
                 };
                 set({ todos: [...get().todos, newTodo] });
@@ -23,10 +24,10 @@ export const useTodoStore = create<TodoState>()(
             removeTodo: (id: number) => {
                 set({ todos: get().todos.filter((todo) => todo.id !== id) });
             },
-            editTodo: (id: number, newTask: string) => {
+            editTodo: (newTodo : TodoObject) => {
                 set({
                     todos: get().todos.map((todo) =>
-                        todo.id === id ? { ...todo, task: newTask } : todo
+                        todo.id === newTodo.id ? newTodo : todo
                     ),
                 });
             },

@@ -1,49 +1,60 @@
 .todoItem {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 20px 20px;
 
-    border: 1px solid var(--dark-color);
-    border-radius: 5px;
+  border: 1px solid var(--dark-color);
+  border-radius: 5px;
 }
 
 .taskText {
-    font-family: "Nunito";
+  font-family: "Nunito";
+  padding: 5px 5px;
+  border-radius: var(--button-border-radius);
+  border: 1px solid var(--primary-color);
 
-    &:disabled {
-        @include reset-input;
-    }
+  &.completedInput {
+    text-decoration: line-through;
+    opacity: 0.5;
+  }
+
+  &:disabled {
+    @include reset-input;
+    border: 1px solid transparent;
+  }
 }
 
 .action {
-    display: flex;
-    gap: 4px;
+  display: flex;
+  gap: 4px;
+}
+
+%default-button {
+  @include flex-center;
+  @include proportion(30px);
+
+  border-radius: var(--button-border-radius);
+  border: 1px solid var(--dark-color);
 }
 
 .editButton {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    width: 30px;
-    height: 30px;
-
-    background-color: var(--primary-color);
-    border-radius: var(--button-border-radius);
-    border: 1px solid var(--dark-color);
+  @extend %default-button;
+  background-color: var(--primary-color);
 }
 
 .removeButton {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  @extend %default-button;
 
-    width: 30px;
-    height: 30px;
+  background-color: var(--red-color);
+}
 
-    background-color: var(--red-color);
-    border-radius: var(--button-border-radius);
-    border: 1px solid var(--dark-color);
+.toggleButton {
+  @extend %default-button;
+  background-color: transparent;
+
+  &.completed {
+    background-color: var(--primary-color);
+  }
 }
