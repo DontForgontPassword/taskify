@@ -1,12 +1,22 @@
-$poppins: 300, 400, 500;
+@font-face {
+    font-family: "Poppins";
+    src: url("@/assets/fonts/Poppins-Light.woff2") format("woff2");
+    font-weight: 300;
+    font-display: swap;
+}
 
-@each $weight in $poppins {
-    @font-face {
-        font-family: "Poppins";
-        src: url("@/assets/fonts/Poppins-Regular.woff2") format("woff2");
-        font-weight: $weight;
-        font-display: swap;
-    }
+@font-face {
+    font-family: "Poppins";
+    src: url("@/assets/fonts/Poppins-Regular.woff2") format("woff2");
+    font-weight: 400;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Poppins";
+    src: url("@/assets/fonts/Poppins-Medium.woff2") format("woff2");
+    font-weight: 500;
+    font-display: swap;
 }
 
 @font-face {
