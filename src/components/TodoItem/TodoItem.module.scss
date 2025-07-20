@@ -10,7 +10,7 @@
 }
 
 .taskText {
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   padding: 5px 5px;
   border-radius: var(--button-border-radius);
   border: 1px solid var(--primary-color);

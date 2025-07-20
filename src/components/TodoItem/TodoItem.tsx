@@ -15,11 +15,13 @@ const TodoItem = ({ task, completed, id }: TodoObject) => {
   const [isCompleted, setCompleted] = useState(completed);
 
   const handleToggle = () => {
-    setCompleted((prev) => {
-      const updated = !prev;
-      editTodo({ task, completed: updated, id });
-      return updated;
-    });
+    if (!isEditing) {
+      setCompleted((prev) => {
+        const updated = !prev;
+        editTodo({ task, completed: updated, id });
+        return updated;
+      });
+    }
   };
 
   const handleEditing = () => setIsEditing(!isEditing);
@@ -29,9 +31,8 @@ const TodoItem = ({ task, completed, id }: TodoObject) => {
   return (
     <li className={styles.todoItem}>
       <input
-        className={`${styles.taskText} ${
-          isCompleted ? styles.completedInput : ""
-        }`}
+        className={`${styles.taskText} ${isCompleted ? styles.completedInput : ""
+          }`}
         value={task}
         onChange={(e) => {
           if (isEditing) {
@@ -62,9 +63,8 @@ const TodoItem = ({ task, completed, id }: TodoObject) => {
           <FiTrash color="white" />
         </button>
         <button
-          className={`${styles.toggleButton} ${
-            isCompleted ? styles.completed : ""
-          }`}
+          className={`${styles.toggleButton} ${isCompleted ? styles.completed : ""
+            }`}
           onClick={handleToggle}
         >
           {completed ? <FaCheck color="white" /> : null}

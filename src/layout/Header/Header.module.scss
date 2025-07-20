@@ -3,15 +3,14 @@
 }
 
 .inner {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    @include flex-center;
     flex-direction: column;
     gap: 12px;
 }
 
 .title {
     font-family: "Poppins";
+    font-weight: 700;
 }
 
 .carousel {
@@ -47,7 +46,7 @@
 }
 
 .listItem {
-    font-family: "Nunito";
+    font-family: var(--font-primary);
     white-space: nowrap;
 }
 

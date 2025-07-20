@@ -9,7 +9,7 @@
 }
 
 .title {
-  font-family: "Nunito";
+  font-family: var(--font-primary);
 }
 
 .wrapper {
@@ -29,7 +29,7 @@
   padding: 0 15px;
   border-radius: var(--button-border-radius);
   border: 1px solid var(--primary-color);
-  font-family: "Nunito";
+  font-family: var(--font-primary);
 
   &:focus {
     outline: none;
@@ -51,7 +51,7 @@
   top: 50%;
   left: 0;
   transform: translateY(-50%);
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   z-index: 1;
   padding: 0 20px;
   pointer-events: none;
@@ -61,7 +61,7 @@
 .button {
   padding: 0 10px;
   height: 60px;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   border-radius: var(--button-border-radius);
   border: 1px solid #00000040;
   background-color: var(--primary-color);
