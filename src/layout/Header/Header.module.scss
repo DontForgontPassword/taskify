@@ -50,3 +50,9 @@
     font-family: "Nunito";
     white-space: nowrap;
 }
+
+@media (max-width: 874px) {
+    .list {
+        width: 400px;
+    }
+}
