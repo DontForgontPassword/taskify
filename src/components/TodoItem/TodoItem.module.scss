@@ -12,7 +12,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 10px;
+  gap: 10px;
 }
 
 .deadLineText {
@@ -20,6 +20,7 @@
 }
 
 .taskText {
+  padding: 5px 5px;
   font-family: var(--font-primary);
   border-radius: var(--button-border-radius);
   border: 1px solid var(--primary-color);
@@ -32,6 +33,10 @@
   &:disabled {
     @include reset-input;
     border: 1px solid transparent;
+  }
+
+  &:focus {
+    outline: 1px solid var(--dark-color);
   }
 }
 
@@ -47,8 +52,6 @@
 
 .removeButton {
   @extend %default-button !optional;
-
-
   background-color: var(--red-color);
 }
 
