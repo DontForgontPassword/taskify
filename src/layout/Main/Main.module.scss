@@ -1,12 +1,13 @@
 .inner {
     display: flex;
-    gap: 10px;
+    gap: 25px;
     margin-top: 20px;
+    justify-content: center;
 }
 
 @media (max-width: 874px) {
     .inner {
-        flex-direction: column-reverse;
+        flex-direction: column;
         align-items: center;
     }
 }

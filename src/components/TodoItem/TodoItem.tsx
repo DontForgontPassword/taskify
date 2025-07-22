@@ -7,18 +7,18 @@ import { MdEdit, MdSave } from "react-icons/md";
 import { useTodoStore } from "@/hooks/useTodoStore";
 import { FaCheck } from "react-icons/fa6";
 
-const TodoItem = ({ task, completed, id }: TodoObject) => {
-  const removeTodo = useTodoStore((state) => state.removeTodo);
-  const editTodo = useTodoStore((state) => state.editTodo);
-
+const TodoItem = ({ task, deadline, completed, id }: TodoObject) => {
   const [isEditing, setIsEditing] = useState(false);
   const [isCompleted, setCompleted] = useState(completed);
+
+  const removeTodo = useTodoStore((state) => state.removeTodo);
+  const editTodo = useTodoStore((state) => state.editTodo);
 
   const handleToggle = () => {
     if (!isEditing) {
       setCompleted((prev) => {
         const updated = !prev;
-        editTodo({ task, completed: updated, id });
+        editTodo({ task, deadline, completed: updated, id });
         return updated;
       });
     }
@@ -30,45 +30,49 @@ const TodoItem = ({ task, completed, id }: TodoObject) => {
 
   return (
     <li className={styles.todoItem}>
-      <input
-        className={`${styles.taskText} ${isCompleted ? styles.completedInput : ""
-          }`}
-        value={task}
-        onChange={(e) => {
-          if (isEditing) {
-            const editedTodo = {
-              task: e.target.value,
-              completed: isCompleted,
-              id: id,
-            };
-            editTodo(editedTodo);
-          }
-        }}
-        disabled={!isEditing}
-      />
-      <div className={styles.action}>
-        <button
-          className={styles.editButton}
-          aria-label="Edit task"
-          onClick={handleEditing}
-          disabled={isCompleted}
-        >
-          {isEditing ? <MdSave color="white" /> : <MdEdit color="white" />}
-        </button>
-        <button
-          className={styles.removeButton}
-          aria-label="Delete task"
-          onClick={handleRemove}
-        >
-          <FiTrash color="white" />
-        </button>
-        <button
-          className={`${styles.toggleButton} ${isCompleted ? styles.completed : ""
+      <span className={styles.deadLineText}>{deadline}</span>
+      <div className={styles.wrapper}>
+        <input
+          className={`${styles.taskText} ${isCompleted ? styles.completedInput : ""
             }`}
-          onClick={handleToggle}
-        >
-          {completed ? <FaCheck color="white" /> : null}
-        </button>
+          value={task}
+          onChange={(e) => {
+            if (isEditing) {
+              const editedTodo = {
+                task: e.target.value,
+                deadline: deadline,
+                completed: isCompleted,
+                id: id,
+              };
+              editTodo(editedTodo);
+            }
+          }}
+          disabled={!isEditing}
+        />
+        <div className={styles.action}>
+          <button
+            className={styles.editButton}
+            aria-label="Edit task"
+            onClick={handleEditing}
+            disabled={isCompleted}
+          >
+            {isEditing ? <MdSave color="white" /> : <MdEdit color="white" />}
+          </button>
+          <button
+            className={styles.removeButton}
+            aria-label="Delete task"
+            onClick={handleRemove}
+          >
+            <FiTrash color="white" />
+          </button>
+          <button
+            className={`${styles.toggleButton} ${isCompleted ? styles.completed : ""
+              }`}
+            onClick={handleToggle}
+          >
+            {completed ? <FaCheck color="white" /> : null}
+          </button>
+        </div>
       </div>
     </li>
   );

@@ -1,0 +1,9 @@
+@use './mixins.scss' as *;
+
+%default-button {
+    @include flex-center;
+    @include proportion(30px);
+
+    border-radius: var(--button-border-radius);
+    border: 1px solid var(--dark-color);
+}

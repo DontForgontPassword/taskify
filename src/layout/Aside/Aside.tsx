@@ -9,8 +9,8 @@ const Aside = () => {
         <h2 className={styles.title}>Активные задачи</h2>
         <ul className={styles.todoList}>
             {
-                todos.map(({ task, completed, id }) => (
-                    <TodoItem task={task} completed={completed} id={id} key={id} />
+                todos.map(({ task, deadline, completed, id }) => (
+                    <TodoItem task={task} deadline={deadline} completed={completed} id={id} key={id} />
                 ))
             }
         </ul>
