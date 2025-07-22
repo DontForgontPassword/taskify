@@ -1,0 +1,19 @@
+.wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: var(--primary-color);
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center
+}
+
+.taskChange {
+    @extend %default-box;
+    width: 600px;
+    height: 400px;
+
+}

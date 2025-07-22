@@ -2,6 +2,7 @@ import { useState } from "react";
 
 import styles from "./Todo.module.scss"
 import { useTodoStore } from "@/hooks/useTodoStore";
+import Input from "@/components/Input/Input";
 
 const Todo = () => {
     const [content, setContent] = useState("");
@@ -23,22 +24,12 @@ const Todo = () => {
         <div className={styles.todo}>
             <h2 className={styles.title}>Добавить задачу</h2>
             <div className={styles.wrapper}>
-                <div className={styles.inputWrapper}>
-                    <label className={styles.inputLabel} htmlFor="task">
-                        Какова Ваша задача?
-                    </label>
-                    <input id="task" type="text" className={`${styles.input} ${content ? styles.active : ""}`} onChange={(e) => {
-                        setContent(e.target.value)
-                    }} />
-                </div>
-                <div className={styles.inputWrapper}>
-                    <label className={styles.inputLabel} htmlFor="date">
-                        Каков Ваш дед-лайн?
-                    </label>
-                    <input id="date" type="date" className={`${styles.input} ${content ? styles.active : ""}`} onChange={(e) => {
-                        setDate(e.target.value)
-                    }} />
-                </div>
+                <Input type="text" labelText="Какова Ваша задача?" id="task" onChange={(event) => {
+                    setContent(event.target.value)
+                }} className={styles.input} />
+                <Input type="date" labelText="Какова Ваша задача?" id="date" onChange={(event) => {
+                    setDate(event.target.value)
+                }} className={styles.input} />
                 <button className={styles.button} onClick={() => {
                     handleAddTodos(content)
                 }}>Добавить задачу</button>

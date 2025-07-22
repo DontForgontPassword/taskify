@@ -7,3 +7,21 @@
     border-radius: var(--button-border-radius);
     border: 1px solid var(--dark-color);
 }
+
+%default-box {
+    padding: var(--block-padding);
+    box-shadow: var(--block-shadow);
+    border-radius: var(--block-border-radius);
+    background-color: white;
+}
+
+%default-input {
+    padding: 0 15px;
+    border-radius: var(--button-border-radius);
+    border: 1px solid var(--primary-color);
+    font-family: var(--font-primary);
+
+    &:focus {
+        outline: 1px solid var(--dark-color);
+    }
+}

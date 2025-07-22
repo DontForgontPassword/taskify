@@ -8,6 +8,13 @@
   border-radius: var(--block-border-radius);
 }
 
+.input {
+  width: 100%;
+  height: 60px;
+
+  @extend %default-input;
+}
+
 .title {
   font-family: var(--font-primary);
 }
@@ -17,28 +24,6 @@
   flex-direction: column;
   gap: 10px;
   margin-top: 30px;
-}
-
-.inputWrapper {
-  position: relative;
-  flex-grow: 1;
-}
-
-.input {
-  width: 100%;
-  height: 60px;
-  padding: 0 15px;
-  border-radius: var(--button-border-radius);
-  border: 1px solid var(--primary-color);
-  font-family: var(--font-primary);
-
-  &:focus {
-    outline: 1px solid var(--dark-color);
-  }
-}
-
-.inputLabel {
-  font-family: var(--font-primary);
 }
 
 .button {
