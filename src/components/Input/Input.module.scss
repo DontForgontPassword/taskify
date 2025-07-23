@@ -1,5 +1,13 @@
 .inputWrapper {
-    flex-grow: 1;
+    display: inline-flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.input {
+    @extend %default-input;
+
+    padding: 10px 15px;
 }
 
 .inputLabel {

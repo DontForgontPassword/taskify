@@ -16,11 +16,11 @@ const Input: FC<InputProps> = ({
     type,
     onChange
 }) => {
-    return <div className={styles.inputWrapper}>
+    return <div className={`${styles.inputWrapper}`}>
         <label className={styles.inputLabel} htmlFor={id}>
             {labelText}
         </label>
-        <input id={id} type={type} className={className} onChange={onChange} />
+        <input id={id} type={type} className={`${styles.input} ${className ?? ""}`} onChange={onChange} />
     </div>;
 }
 

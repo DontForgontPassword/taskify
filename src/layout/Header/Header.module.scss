@@ -27,12 +27,12 @@
 
     &::before {
         left: 0;
-        background: linear-gradient(to right, white, transparent);
+        background-color: linear-gradient(to right, white, transparent);
     }
 
     &::after {
         right: 0;
-        background: linear-gradient(to left, white, transparent);
+        background-color: linear-gradient(to left, white, transparent);
     }
 }
 

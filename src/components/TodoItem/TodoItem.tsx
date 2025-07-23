@@ -7,7 +7,8 @@ import { MdEdit } from "react-icons/md";
 import { useTodoStore } from "@/hooks/useTodoStore";
 import { FaCheck } from "react-icons/fa6";
 import TaskChange from "@/layout/TaskChange/TaskChange";
-import TodoButton from "../TodoButton/TodoButton";
+import SmallButton from "../SmallButton/SmallButton";
+
 
 const TodoItem: FC<TodoObject> = ({ task, deadline, completed, id }) => {
   const [isCompleted, setCompleted] = useState(completed);
@@ -29,25 +30,25 @@ const TodoItem: FC<TodoObject> = ({ task, deadline, completed, id }) => {
     <li className={styles.todoItem}>
       <span className={styles.deadLineText}>{deadline}</span>
       <div className={styles.wrapper}>
-        <span className={`${styles.taskText} ${isCompleted ? styles.completedInput : ""}`}>{task}</span>
+        <span className={`${styles.taskText} ${isCompleted ? styles.completed : ""}`}>{task}</span>
         <div className={styles.action}>
-          <TodoButton className={styles.editButton} ariaLabel="Edit task" onClick={handleEdit}>
+          <SmallButton className={styles.editButton} ariaLabel="Edit task" onClick={handleEdit}>
             {
               <MdEdit color="white" />
             }
-          </TodoButton>
-          <TodoButton className={styles.removeButton} ariaLabel="Delete task" onClick={handleRemove}>
+          </SmallButton>
+          <SmallButton className={styles.removeButton} ariaLabel="Delete task" onClick={handleRemove}>
             <FiTrash color="white" />
-          </TodoButton>
-          <TodoButton className={`${styles.toggleButton} ${isCompleted ? styles.completed : ""}`} ariaLabel="Toggle task" onClick={handleToggle}>
+          </SmallButton>
+          <SmallButton className={`${styles.toggleButton} ${isCompleted ? styles.completed : ""}`} ariaLabel="Toggle task" onClick={handleToggle}>
             {
               isCompleted ? <FaCheck color="white" /> : null
             }
-          </TodoButton>
+          </SmallButton>
         </div>
       </div>
       {
-        isEditing ? <TaskChange /> : null
+        isEditing ? <TaskChange setEditing={setEditing} task={task} deadline={deadline} completed={completed} id={id} /> : null
       }
     </li>
   );

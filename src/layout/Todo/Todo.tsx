@@ -2,7 +2,9 @@ import { useState } from "react";
 
 import styles from "./Todo.module.scss"
 import { useTodoStore } from "@/hooks/useTodoStore";
+
 import Input from "@/components/Input/Input";
+import Button from "@/components/Button/Button";
 
 const Todo = () => {
     const [content, setContent] = useState("");
@@ -30,9 +32,9 @@ const Todo = () => {
                 <Input type="date" labelText="Какова Ваша задача?" id="date" onChange={(event) => {
                     setDate(event.target.value)
                 }} className={styles.input} />
-                <button className={styles.button} onClick={() => {
+                <Button className={styles.button} onClick={() => {
                     handleAddTodos(content)
-                }}>Добавить задачу</button>
+                }}>Добавить задачу</Button>
             </div>
         </div>
     );

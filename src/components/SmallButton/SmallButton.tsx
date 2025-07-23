@@ -1,24 +1,24 @@
 import type { FC } from "react";
-import styles from "./TodoButton.module.scss";
+import styles from "./SmallButton.module.scss";
 
-type TodoButtonProps = {
+type SmallButtonProps = {
     className: string,
     ariaLabel: string,
     onClick: React.MouseEventHandler<HTMLButtonElement>,
     children: React.ReactNode
 }
 
-const TodoButton: FC<TodoButtonProps> = ({
+const SmallButton: FC<SmallButtonProps> = ({
     className,
     ariaLabel,
     onClick,
     children
 }) => {
-    return <button className={`${styles.button} ${className}`} aria-label={ariaLabel} onClick={onClick}>
+    return <button className={`${styles.button} ${className ?? ""}`} aria-label={ariaLabel} onClick={onClick}>
         {
             children
         }
     </button>;
 }
 
-export default TodoButton;
+export default SmallButton;
