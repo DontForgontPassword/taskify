@@ -42,15 +42,16 @@
     gap: 12px;
     padding: 10px;
     width: 700px;
+
+    @include tablet {
+        width: 400px;
+    }
+
+    @include phone {
+        width: 360px;
+    }
 }
 
 .listItem {
-    font-family: var(--font-primary);
     white-space: nowrap;
-}
-
-@media (max-width: 874px) {
-    .list {
-        width: 400px;
-    }
 }

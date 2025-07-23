@@ -6,7 +6,8 @@
 @mixin reset-input {
     background-color: transparent;
     color: inherit;
-    &::placeholder{ 
+
+    &::placeholder {
         color: inherit;
     }
 }
@@ -15,4 +16,16 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+@mixin tablet {
+    @media (max-width: 874px) {
+        @content;
+    }
+}
+
+@mixin phone {
+    @media (max-width: 450px) {
+        @content;
+    }
 }

@@ -1,8 +1,18 @@
 :root {
     --primary-color: #131313cc;
     --gray-color: #00000040;
-    --red-color: #f52626;
-    --green-color: #18ff24;
+    --red-color: rgb(245, 38, 38);
+    --green-color: rgb(24, 255, 36);
+
+    --late-background-color: rgba(244, 67, 54, 0.15);
+    --late-border-color: #f44336;
+    --late-color: #b71c1c;
+    --late-box-shadow: 0 0 8px rgba(244, 67, 54, 0.3);
+
+    --completed-background-color: rgba(43, 255, 0, 0.15);
+    --completed-border-color: #6cf436;
+    --completed-color: #36b71c;
+    --completed-box-shadow: 0 0 8px rgba(76, 244, 54, 0.3);
 
     --font-primary: "Nunito";
     --font-secondary: "Poppins";
@@ -14,6 +24,7 @@
 
     --transition: 0.2s;
 
-    --desktop: 1200px;
+    --desktop-width: 1200px;
+
     --safe-padding: 40px;
 }

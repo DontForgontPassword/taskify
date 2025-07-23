@@ -12,6 +12,8 @@ const Todo = () => {
     const addTodo = useTodoStore((state) => state.addTodo);
 
     const handleAddTodos = (content: string) => {
+        if (content.trim() === "") return;
+
         const todo = {
             task: content,
             deadline: date,

@@ -5,6 +5,10 @@
     padding: var(--block-padding);
     border-radius: var(--block-border-radius);
     box-shadow: var(--block-shadow);
+
+    @include phone {
+        width: 360px;
+    }
 }
 
 .title {

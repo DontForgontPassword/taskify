@@ -25,6 +25,16 @@ const TaskChange: FC<TaskChangeProps> = ({
 
     const editTodo = useTodoStore((state) => state.editTodo);
 
+    const handleEditTodo = () => {
+        editTodo({
+            completed,
+            deadline: date,
+            id,
+            task: content
+        });
+        setEditing(false);
+    }
+
     return <div className={styles.wrapper}>
         <div className={styles.taskChange}>
             <div className={styles.headerWrapper}>
@@ -40,15 +50,7 @@ const TaskChange: FC<TaskChangeProps> = ({
             <Input className={styles.input} labelText="Каков Ваш дед-лайн?" id="edit-date" type="date" onChange={(event) => {
                 setDate(event.target.value)
             }} />
-            <Button className={styles.button} onClick={() => {
-                editTodo({
-                    completed,
-                    deadline: date,
-                    id,
-                    task: content
-                });
-                setEditing(false);
-            }}>Сохранить</Button>
+            <Button className={styles.button} onClick={handleEditTodo}>Сохранить</Button>
         </div>
     </div>;
 }

@@ -21,7 +21,7 @@ const Header = () => {
                 offset = 0;
             }
 
-            list.style.transform = `translateX(-${offset}px)`; // движется влево
+            list.style.transform = `translateX(-${offset}px)`;
 
             requestAnimationFrame(step);
         };

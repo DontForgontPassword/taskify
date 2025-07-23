@@ -1,6 +1,7 @@
-@forward "./abstracts/fonts.scss";
-@forward "./abstracts/mixins.scss";
-@forward "./abstracts/variables.scss";
-@forward "./abstracts/placeholder.scss";
+@forward "./abstracts/fonts";
+@forward "./abstracts/mixins";
+@forward "./abstracts/variables";
+@forward "./abstracts/placeholder";
 
-@forward "./base/reset.scss";
+@forward "./base/reset";
+@forward "./base/base";

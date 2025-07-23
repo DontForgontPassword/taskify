@@ -1,11 +1,28 @@
 .todoItem {
   display: flex;
   flex-direction: column;
+  gap: 15px;
   width: 100%;
   padding: 20px 20px;
 
   border: 1px solid var(--gray-color);
   border-radius: 5px;
+
+  &.completed {
+    background-color: var(--completed-background-color);
+    border-color: var(--completed-border-color);
+    color: var(--completed-color);
+
+    box-shadow: var(--completed-box-shadow);
+  }
+
+  &.late {
+    background-color: var(--late-background-color);
+    border-color: var(--late-border-color);
+    color: var(--late-color);
+
+    box-shadow: var(--late-box-shadow);
+  }
 }
 
 .wrapper {
@@ -15,16 +32,19 @@
   gap: 10px;
 }
 
-.deadLineText {
-  font-family: var(--font-primary);
+.deadlineWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .taskText {
-  font-family: var(--font-primary);
+  flex: 1;
+  word-break: break-word;
+}
 
-  &.completed {
-    text-decoration: line-through;
-  }
+.taskCompleted {
+  text-decoration: line-through;
 }
 
 .action {
