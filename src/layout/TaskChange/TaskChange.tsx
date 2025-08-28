@@ -10,7 +10,6 @@ import { IoMdClose } from "react-icons/io";
 
 import type { TodoObject } from "@/types/Todo";
 
-
 type TaskChangeProps = TodoObject & {
     setEditing: React.Dispatch<React.SetStateAction<boolean>>
 }

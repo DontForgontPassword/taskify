@@ -18,6 +18,11 @@
     align-items: center;
 }
 
+@mixin abs-center {
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
 @mixin tablet {
     @media (max-width: 874px) {
         @content;

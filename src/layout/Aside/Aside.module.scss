@@ -12,7 +12,11 @@
 }
 
 .title {
-    font-family: var(--font-primary);
+    font-family: var(--primary-font);
+}
+
+.select {
+    margin-top: 15px;
 }
 
 .todoList {
